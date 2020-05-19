@@ -1,8 +1,16 @@
 function [J] = pid_optim(x)
 
 s = fotf('s');
+j = 0.01;
+b = 0.1;
+K = 0.01;
+R = 1;
+L = 0.5;
 
-plant = 1 / (s^2 + 10*s + 20);
+P_motor = K/((j*s+b)*(L*s+R)+K^2);
+
+
+
 
 Kp = x(1);
 Ki = x(2);
@@ -12,7 +20,7 @@ Mu = x(5);
 
 cont = fracpid(Kp,Ki,Ld,Kd,Mu);
 
-step(feedback(plant*cont,1));
+step(feedback(P_motor*cont,1));
 
 dt = 0.01;
 t = 0:dt:1;
