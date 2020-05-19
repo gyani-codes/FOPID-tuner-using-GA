@@ -1,6 +1,8 @@
 # FOPID-tuner-using-GA
 A fractional order PID controller is tuned using genetic algorithm , to control the speed of DC motor
-
+1. GA folder contains the code.
+2. Results and Screenshot folder contains the scrrenshots of tuning and results.
+3. Simulink_Models contains the simulink model 
 
 # Steps for running the Project
 
@@ -13,6 +15,7 @@ A fractional order PID controller is tuned using genetic algorithm , to control 
 # Steps for running the simulated model
 
 1. Do the first step of running the project.
+2. Open model fractionalPID_with_dc_motor.slx from the Simulink_Models folder in the simulink.
 2. The physical parameters of DC motor must be present in the workspace before running the model. Set the following parameters in the workspace:
   J = 0.01;
   b = 0.1;
